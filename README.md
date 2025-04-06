@@ -4,7 +4,7 @@ A Kotlin-based CLI tool that extracts and prints **all public declarations** fro
 
 This tool was built with a Kotlin compiler PSI via `kotlin-compiler-embeddable`, no extra libraries or plugins.
 For convenient UX, this can be built as a self-contained JAR `solution.jar`. I included a wrapper shell script `solution.sh` that runs the JAR.
-
+Both files and folders are supported. 
 ---
 ## How to build
 Open the project in IntelliJ IDEA, open ```build.gradle.kts``` and run the following task by clicking the green arrow button:\
