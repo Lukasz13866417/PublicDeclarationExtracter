@@ -1,49 +1,49 @@
-package my.test.package
+package sample
 
-fun topLevelFunction() {}
-val topLevelProperty = 42
+fun apiFunction() {}
 
-private fun privateFunction() {}
+private fun hiddenFunction() {}
 
-internal class InternalClass {
-    fun internalClassMethod() {}
-}
+object RootObject {
+    val value = 123
 
-class OuterClass {
-    fun publicMethod() {}
+    fun objectFunction() {}
 
-    private fun privateMethod() {}
-
-    class NestedClass {
-        fun nestedMethod() {}
-    }
-
-    inner class InnerClass {
-        fun innerMethod() {}
+    private class PrivateHelper {
+        fun helperLogic() {}
     }
 
     companion object {
-        fun companionFunction() {}
+        fun companionVisible() {}
     }
 }
 
-interface MyInterface {
-    fun interfaceMethod()
+sealed class Shape {
+    class Circle(val radius: Double) : Shape()
+    object Square : Shape()
 }
 
-abstract class AbstractThing {
-    abstract fun mustImplement()
+class Container {
+    fun exposedMethod() {}
+
+    private fun privateMethod() {}
+
+    class Nested {
+        fun deep() {
+            fun localHelper() {} // should be skipped
+        }
+    }
 }
 
-sealed class SealedType {
-    object Sub1 : SealedType()
-    class Sub2(val data: String) : SealedType()
+enum class Mode {
+    BASIC,
+    ADVANCED {
+        fun advancedOnly() {} // shouldn't be detected
+    }
 }
 
-enum class MyEnum {
-    ONE, TWO
+interface Reporter {
+    fun report()
 }
 
-object Singleton {
-    fun singletonMethod() {}
-}
+typealias ID = String

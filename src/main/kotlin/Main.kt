@@ -31,7 +31,6 @@ fun main(args: Array<String>) {
     }
 
     kotlinFiles.forEach { file ->
-        println(file)
         val ktFile = psiFactory.createFile(file.readText())
         printPublicDeclarations(ktFile)
     }
