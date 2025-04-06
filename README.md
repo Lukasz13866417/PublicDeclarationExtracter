@@ -1,5 +1,5 @@
-# CLI tool that extracts public declarations from a Kotlin codebase.
-
+# CLI tool that extracts public declarations from a Kotlin codebase. 
+\
 This tool was built in Kotlin with a compiler PSI via `kotlin-compiler-embeddable`, no extra libraries or plugins.
 For convenient UX, this can be built as a self-contained JAR `solution.jar`. I included a wrapper shell script `solution.sh` that runs the JAR.
 Both files and folders are supported. 
