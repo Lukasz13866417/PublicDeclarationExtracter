@@ -18,6 +18,12 @@ tasks.test {
     useJUnitPlatform()
 }
 
+sourceSets {
+    test {
+        java.srcDirs("src/test/kotlin")
+    }
+}
+
 tasks.jar {
     manifest {
         attributes["Main-Class"] = "org.example.MainKt"

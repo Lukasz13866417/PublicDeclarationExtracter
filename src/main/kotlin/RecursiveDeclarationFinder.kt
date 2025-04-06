@@ -57,7 +57,7 @@ private fun recursivePrintPublic(decl: KtDeclaration, indent: String = "") {
     }
 }
 
-private fun isEffectivelyPublic(decl: KtDeclaration): Boolean {
+internal fun isEffectivelyPublic(decl: KtDeclaration): Boolean {
     return !decl.hasModifier(KtTokens.PRIVATE_KEYWORD)
             && !decl.hasModifier(KtTokens.PROTECTED_KEYWORD)
             && !decl.hasModifier(KtTokens.INTERNAL_KEYWORD)
