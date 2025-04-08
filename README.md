@@ -4,7 +4,7 @@ This tool was built in Kotlin with a compiler PSI via `kotlin-compiler-embeddabl
 For convenient UX, this can be built as a self-contained JAR `solution.jar`. I included a wrapper shell script `solution.sh` that runs the JAR.
 Both files and folders are supported.
 
-## How to build
+## How to build as a CLI tool
 Open the project in IntelliJ IDEA, open ```build.gradle.kts``` and run the following task by clicking the green arrow button:\
 ![img.png](img.png)\
 This will create the ```solution.jar``` in the same folder as this README and the script ```solution.sh```.
@@ -21,7 +21,7 @@ or instead of using the wrapper, you can just:
 ```declarative
 java -jar solution.jar ./Exposed
 ```
-
+### This can also be easily run inside IntelliJ IDEA, just set the command line arg in the configuration to the path to the Kotlin codebase that you want to parse.
 ## Example
 ### Input file
 ```Kotlin
